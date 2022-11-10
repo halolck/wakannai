@@ -74,7 +74,7 @@
                                 for (int y = rect.Left; y < rect.Height; y++)
                                 {
                                     // Copy a single line 
-                                    Utilities.CopyMemory(destPtr+1, sourcePtr+1, rect.Width * 4+1);
+                                    Utilities.CopyMemory(destPtr, sourcePtr, rect.Width * 4 + rect.Left*4);
 
                                     // Advance pointers
                                     sourcePtr = IntPtr.Add(sourcePtr, mapSource.RowPitch);
